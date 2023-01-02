@@ -1,31 +1,16 @@
-//compound assignment operators
-//Perform a mathematical operation and reassign the result to the variable in one line of code.
+//boolen with equality and inequality operators
+let drive = false;
 
-let a = 5;
-a += 5; //addition
-a -= 5; //subtraction
-a *= 5; //multiplication
-a /= 5; //divsion
-console.log(a);
+if (drive) {
+  console.log("you can drive");
+} else {
+  console.log("you cant drive");
+}
 
-//reminder assignment operator
-let r = 5;
-r %= 5; //reminder
-console.log(r);
+console.log(5 == "5"); //js convert string 5 to num 5, and checks
 
-//power assignment operator
-let p = 5;
-p **= 2; //squareroot
-console.log(p);
+console.log(5 === "5"); //checks both equally
 
-//bitwise and assignment operator
+console.log(5 != "5"); //inequality operator
 
-let ba = 5;
-ba &= 2; //bitwise and operator
-console.log(ba);
-
-//bitwise or assignment operator
-
-let bo = 5;
-bo |= 2; //bitwise or operator
-console.log(bo);
+console.log(5 !== "5"); //strict inequality operator
