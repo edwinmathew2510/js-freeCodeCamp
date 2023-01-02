@@ -1,16 +1,21 @@
-//boolen with equality and inequality operators
-let drive = false;
+//unary operators
 
-if (drive) {
-  console.log("you can drive");
-} else {
-  console.log("you cant drive");
-}
+let str = "24"; //+opertor ,can make string to
+let sre = +str;
+console.log(str);
+console.log(typeof str);
+console.log(typeof sre);
 
-console.log(5 == "5"); //js convert string 5 to num 5, and checks
+//logical not operator
 
-console.log(5 === "5"); //checks both equally
+let online = true;
+console.log(!online); //flips the boolen value
 
-console.log(5 != "5"); //inequality operator
+//bitwise binary not opeartor
+let num = 5;
+console.log(~num);
 
-console.log(5 !== "5"); //strict inequality operator
+//void
+
+let result = void (2 + 2);
+console.log(result); //made it undefined
