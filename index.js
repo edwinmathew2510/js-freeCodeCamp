@@ -1,12 +1,9 @@
-//string concat
+//template literals and string interpolation
+
 let name = "edwin";
-name += " mathew";
-console.log(name);
+let greetings = `Hello ${name}!`;
+console.log(greetings);
 
-let str1 = "hello";
-let str2 = "world";
-let result = str1.concat(" ", str2);
-console.log(typeof result); // Output: "hello world"
-
-let str = 'it is a "beautiful day!"';
-console.log(str); // Output: hello "world"
+let peom = `roses are red
+violets are blue`;
+console.log(peom);
