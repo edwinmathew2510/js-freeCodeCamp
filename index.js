@@ -1,9 +1,15 @@
-//template literals and string interpolation
+//positioning substrings by index of
 
-let name = "edwin";
-let greetings = `Hello ${name}!`;
-console.log(greetings);
+let str = "hi Edwin";
+let position = str.indexOf("Edwin");
+console.log(position);
 
-let peom = `roses are red
-violets are blue`;
-console.log(peom);
+//if deosnt find the substring
+
+let str1 = "hi edwin";
+let position1 = str1.indexOf("kevin");
+console.log(position1); //prints value -1
+
+let str2 = "hi edwin";
+let position2 = str2.indexOf("edwin", 1);
+console.log(position2); //prints value -1
