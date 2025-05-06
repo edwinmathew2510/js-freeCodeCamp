@@ -1,8 +1,12 @@
-//repeat methods
+// trim methods
 
-let name = "edwin ";
-let repeat = name.repeat(5);
-console.log(repeat); //will repeat 5 times the string
+let name = "      edwin mathew      ";
 
-let repeat1 = name.repeat(-2);
-console.log(repeat1); //value can not be negative or infinite ,shows error
+let trim = name.trimStart();
+console.log(trim); //trimmed start whitespace
+
+let trim1 = name.trimEnd();
+console.log(trim1); //trimmed last whitespace
+
+let trim2 = name.trim();
+console.log(trim2); //trimmed whole white spaces
