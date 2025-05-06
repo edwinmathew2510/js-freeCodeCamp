@@ -1,11 +1,8 @@
-//replace methods
+//repeat methods
 
-let name = "edwin mathew mathew";
-let replaced = name.replace("edwin", "kevin");
-console.log(replaced); //value of edwin replaced with kevin
+let name = "edwin ";
+let repeat = name.repeat(5);
+console.log(repeat); //will repeat 5 times the string
 
-let replaced1 = name.replace("Edwin", "kevin");
-console.log(replaced1); //they are case sensitive
-
-let replaced2 = name.replace("mathew", "hi");
-console.log(replaced2); //only replace first string with word
+let repeat1 = name.repeat(-2);
+console.log(repeat1); //value can not be negative or infinite ,shows error
