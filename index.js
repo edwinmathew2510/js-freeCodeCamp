@@ -1,9 +1,11 @@
-//ASCII VALUE
-let num = "5"; //char code at
-console.log(num.charCodeAt(0));
+let name = "edwin mathew ";
+let nam = name.includes("edwin");
+console.log(nam);
 
-let num1 = String.fromCharCode(67);
-console.log(num); //fromCharCode
+let name1 = "hi my name is edwin";
+let output = name1.includes("my", 2); //will check after index 2
+console.log(output);
 
-let num2 = String.fromCharCode(66);
-console.log(num2);
+let name2 = "my name is Edwin";
+let output2 = name2.includes("edwin"); //case sensitive
+console.log(output2);
