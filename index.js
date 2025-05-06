@@ -1,8 +1,11 @@
-//toUpperCase and toLowerCase method
+//replace methods
 
-let name = "Edwin Mathew";
-let up = name.toUpperCase();
-console.log(up);
+let name = "edwin mathew mathew";
+let replaced = name.replace("edwin", "kevin");
+console.log(replaced); //value of edwin replaced with kevin
 
-let lc = name.toLowerCase();
-console.log(lc);
+let replaced1 = name.replace("Edwin", "kevin");
+console.log(replaced1); //they are case sensitive
+
+let replaced2 = name.replace("mathew", "hi");
+console.log(replaced2); //only replace first string with word
