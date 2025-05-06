@@ -1,11 +1,13 @@
-let name = "edwin mathew ";
-let nam = name.includes("edwin");
-console.log(nam);
+//slice method to extract a substring
 
-let name1 = "hi my name is edwin";
-let output = name1.includes("my", 2); //will check after index 2
-console.log(output);
+let name = "edwin mathew";
+let slice = name.slice(0, 5);
+console.log(slice);
 
-let name2 = "my name is Edwin";
-let output2 = name2.includes("edwin"); //case sensitive
-console.log(output2);
+let name1 = "edwin mathew";
+let slice1 = name1.slice(6); //extract methods after 6th index
+console.log(slice1);
+
+let name2 = "edwin mathew hi";
+let slice2 = name2.slice(-2); //extracts methods from back
+console.log(slice2);
