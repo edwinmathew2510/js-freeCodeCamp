@@ -1,18 +1,31 @@
-//increment and decrement operators
+//compound assignment operators
+//Perform a mathematical operation and reassign the result to the variable in one line of code.
 
-// prefix
+let a = 5;
+a += 5; //addition
+a -= 5; //subtraction
+a *= 5; //multiplication
+a /= 5; //divsion
+console.log(a);
 
-let x = 5;
-console.log(++x); //update the value first and returns the value
-console.log(x);
+//reminder assignment operator
+let r = 5;
+r %= 5; //reminder
+console.log(r);
 
-console.log(--x);
-console.log(x); //update the value first and returns the value(decrement)
+//power assignment operator
+let p = 5;
+p **= 2; //squareroot
+console.log(p);
 
-// postfix
-let z = 2;
-console.log(z++); //update the value last and returns the first(increment)
-console.log(z);
+//bitwise and assignment operator
 
-console.log(z--);
-console.log(z); //update the value last and returns the first(decrement)
+let ba = 5;
+ba &= 2; //bitwise and operator
+console.log(ba);
+
+//bitwise or assignment operator
+
+let bo = 5;
+bo |= 2; //bitwise or operator
+console.log(bo);
