@@ -1,17 +1,18 @@
-//opretor precdence
+//increment and decrement operators
 
-var result = 2 + 4 * 5 - 2;
-console.log(result); //* has more precdence value than +,-
+// prefix
 
-//By using parentheses to force certain parts of the expression to be evaluated first.
-var result = 2 + 2 / 8 - 1;
-console.log(result); /// has more precendence value than +,-
+let x = 5;
+console.log(++x); //update the value first and returns the value
+console.log(x);
 
-var result = 10 - 2 + 5;
-console.log(result); //assoactivity left to right
+console.log(--x);
+console.log(x); //update the value first and returns the value(decrement)
 
-var result = (b = 10);
-console.log(b, result); //assignment oprator has assotivity right to left
+// postfix
+let z = 2;
+console.log(z++); //update the value last and returns the first(increment)
+console.log(z);
 
-var result = 2 ** (3 ** 2); //exponet opeartor will assotive from right to left
-console.log(result);
+console.log(z--);
+console.log(z); //update the value last and returns the first(decrement)
