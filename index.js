@@ -1,12 +1,39 @@
-// trim methods
+// calculations with Number  and other datatypes
 
-let name = "      edwin mathew      ";
+value1 = 5 + "10";
+console.log(value1); //made both value string
+console.log(typeof value1);
 
-let trim = name.trimStart();
-console.log(trim); //trimmed start whitespace
+value2 = 5 - "10";
+console.log(value2);
+console.log(typeof value2); //made both into number
 
-let trim1 = name.trimEnd();
-console.log(trim1); //trimmed last whitespace
+value3 = 5 * "10";
+console.log(value3);
+console.log(typeof value3); //made both into number
 
-let trim2 = name.trim();
-console.log(trim2); //trimmed whole white spaces
+value4 = 5 / "10";
+console.log(value4);
+console.log(typeof value4); //made both into number
+
+value5 = 5 - "abc";
+console.log(value5);
+console.log(typeof value5); //made both into nan ,Applied to sub,div,mul
+
+// operations with boolean
+
+valuet = 5 + true;
+console.log(valuet);
+console.log(typeof valuet); //made both into number
+
+valuef = 5 + false;
+console.log(valuef);
+console.log(typeof valuef); //made both into number
+
+valuefs = "abc " + true;
+console.log(valuefs);
+console.log(typeof valuefs); //made both into string
+
+valueb = "5" / true;
+console.log(valueb);
+console.log(typeof valueb); //made both into number
