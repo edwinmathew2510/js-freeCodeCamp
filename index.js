@@ -1,24 +1,36 @@
-//if else statement and ternary operator
-if (null) {
-  console.log("hi my name");
-}
-if ("edwin") {
-  console.log("my name is");
-}
+//binary logical operator
 
-const age = 22;
-if (age <= 22) {
-  console.log("you can vote");
+//logical and &&
+const result = 0 && false; //USED TO CHAECK MULTIPLE CONDITIONS
+console.log(result);
+
+if (2 < 3 && 3 < 4) {
+  console.log("if ");
 } else {
-  console.log("you cant vote");
+  console.log("else");
 }
 
-//ternery opertor
+//logical or|| operator
 
-const temp = 28;
-const weather = temp >= 30 ? "warm" : "cool";
-console.log(`its an ${weather} day`);
+const orResult = true || 0;
+console.log(orResult); //check weather if one condition is true
 
-let mark = 20;
-let passMark = mark >= 20 ? "passed" : "failed";
-console.log(`you have ${passMark}`);
+let userInput;
+if (userInput || "guest") {
+  console.log("user found ");
+} else {
+  console.log("no user");
+}
+
+//nullish coshing operator
+
+let coResult = null ?? "default";
+console.log(coResult);
+
+const userSettings = {
+  theme: null,
+  Notification: false,
+  volume: 0,
+};
+let theme = userSettings.theme ?? "light";
+console.log(theme);
