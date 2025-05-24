@@ -1,36 +1,29 @@
-//binary logical operator
+// math object in js
 
-//logical and &&
-const result = 0 && false; //USED TO CHAECK MULTIPLE CONDITIONS
-console.log(result);
+const mathRandom = Math.random();
+console.log(mathRandom); //random no btw 0 and 1
 
-if (2 < 3 && 3 < 4) {
-  console.log("if ");
-} else {
-  console.log("else");
-}
+const min = Math.min(1, 4, 56, 74);
+console.log(min); //smallest no
 
-//logical or|| operator
+const max = Math.max(1, 2, 56, 89754, 345264);
+console.log(max); //largest no
 
-const orResult = true || 0;
-console.log(orResult); //check weather if one condition is true
+console.log(Math.ceil(2.3)); //round the value to next whole no
 
-let userInput;
-if (userInput || "guest") {
-  console.log("user found ");
-} else {
-  console.log("no user");
-}
+console.log(Math.floor(3.4)); //round the no to pervious whole no
 
-//nullish coshing operator
+console.log(Math.round(5.5)); //round the value more accurately
 
-let coResult = null ?? "default";
-console.log(coResult);
+const RandomNum = Math.floor(Math.random() * 10) + 1;
+console.log(RandomNum); //will choose a random no btw 1 to 10
 
-const userSettings = {
-  theme: null,
-  Notification: false,
-  volume: 0,
-};
-let theme = userSettings.theme ?? "light";
-console.log(theme);
+console.log(Math.trunc(2.3)); //remove the float
+
+console.log(Math.sqrt(81)); //square root
+
+console.log(Math.cbrt(8)); //cube root
+
+console.log(Math.abs(-5)); //absolute value
+
+console.log(Math.pow(2, 3)); //raises to the power of number
