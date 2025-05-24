@@ -1,21 +1,24 @@
-//unary operators
+//if else statement and ternary operator
+if (null) {
+  console.log("hi my name");
+}
+if ("edwin") {
+  console.log("my name is");
+}
 
-let str = "24"; //+opertor ,can make string to
-let sre = +str;
-console.log(str);
-console.log(typeof str);
-console.log(typeof sre);
+const age = 22;
+if (age <= 22) {
+  console.log("you can vote");
+} else {
+  console.log("you cant vote");
+}
 
-//logical not operator
+//ternery opertor
 
-let online = true;
-console.log(!online); //flips the boolen value
+const temp = 28;
+const weather = temp >= 30 ? "warm" : "cool";
+console.log(`its an ${weather} day`);
 
-//bitwise binary not opeartor
-let num = 5;
-console.log(~num);
-
-//void
-
-let result = void (2 + 2);
-console.log(result); //made it undefined
+let mark = 20;
+let passMark = mark >= 20 ? "passed" : "failed";
+console.log(`you have ${passMark}`);
