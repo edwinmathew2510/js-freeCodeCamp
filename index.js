@@ -1,10 +1,14 @@
-function isLeapYear(year) {
-  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-    return `${year} its an leap year`;
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
   } else {
-    return `${year} its not an leap year`;
+    return str;
   }
 }
-const year = 2025;
-const result = isLeapYear(year);
-console.log(result);
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
+
+console.log(truncateString("A-", 1));
+
+console.log(truncateString("Absolutely Longer", 2));
