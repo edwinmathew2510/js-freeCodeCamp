@@ -1,14 +1,20 @@
-function truncateString(str, num) {
-  if (str.length > num) {
-    return str.slice(0, num) + "...";
-  } else {
-    return str;
-  }
-}
-console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+const fruits = ["edwin", "kevin", "mathew"];
+console.log(fruits[0]);
+// const newArray = fruits.push("swapna");
+// console.log(newArray, fruits);
 
-console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
+// const newArray1 = fruits.pop();
+// console.log(newArray1, fruits);
 
-console.log(truncateString("A-", 1));
+// const newArray2 = fruits.unshift("swapna");
+// console.log(newArray2, fruits);
 
-console.log(truncateString("Absolutely Longer", 2));
+// const newArray3 = fruits.shift();
+// console.log(newArray3, fruits);
+
+const twodArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+console.log(twodArray[0][1]);
