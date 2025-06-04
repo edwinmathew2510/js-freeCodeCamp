@@ -1,46 +1,30 @@
-let lunches = [];
-function addLunchToEnd(array, string) {
-  array.push(string);
-  console.log(string + " added to the end of the lunch menu.");
-  return array;
+let fruits = ["banana", "appel", "orange"];
+console.log(fruits.indexOf("banana"));
+
+//spilce  method
+
+let fruits1 = ["apple", "jackFruit", "watermelon", "mango"];
+fruits1.splice(1, 1, "stawberry");
+console.log(fruits1);
+
+let num = [1, 2, 3, 4, 5];
+num.splice(1, 2, 6, 7, 8);
+console.log(num);
+
+//copy an array
+let orginal = [1, 2, 3, 4, 5];
+let copy = [...orginal];
+copy.splice(2, 1, 7);
+console.log(orginal);
+console.log(copy);
+
+let color = ["blue", "green", "red", "black"];
+let indexColor = color.indexOf("green");
+if (indexColor !== -1) {
+  color.splice(indexColor, 1);
+  console.log(color);
 }
-function addLunchToStart(array, string) {
-  array.unshift(string);
-  console.log(`${string} added to the start of the lunch menu.`);
-  return array;
-}
-function removeLastLunch(array) {
-  if (array.length === 0) {
-    console.log("No lunches to remove.");
-  } else {
-    let str = array.pop();
-    console.log(`${str}removed from the start of the lunch menu."`);
-  }
-  return array;
-}
-function removeFirstLunch(array) {
-  if (array.length === 0) {
-    console.log("No lunches to remove.");
-  } else {
-    let removed = array.shift();
-    console.log(removed + "removed from the start of the lunch menu.");
-    return array;
-  }
-}
-function getRandomLunch(array) {
-  if (array.length === 0) {
-    console.log("No lunches available.");
-  } else {
-    let randomIndex = math.floor(math.random() * array.length);
-    console.log(`Randomly selected lunch:${array[randomIndex]}`);
-    return array;
-  }
-}
-function showLunchMenu(array) {
-  if (array.length === 0) {
-    console.log("The menu is empty.");
-  } else {
-    console.log("Menu items:" + array.join(","));
-    return array;
-  }
-}
+
+let numbers = [1, 2, 3, 4, 5];
+numbers.splice(0);
+console.log(numbers);
