@@ -1,20 +1,15 @@
-const fruits = ["edwin", "kevin", "mathew"];
-console.log(fruits[0]);
-// const newArray = fruits.push("swapna");
-// console.log(newArray, fruits);
+//split reverse and join methods
 
-// const newArray1 = fruits.pop();
-// console.log(newArray1, fruits);
+let str = "hello";
+let arr = str.split("");
+console.log(arr);
 
-// const newArray2 = fruits.unshift("swapna");
-// console.log(newArray2, fruits);
+let revArr = arr.reverse();
+console.log(revArr);
 
-// const newArray3 = fruits.shift();
-// console.log(newArray3, fruits);
+let revString = revArr.join("");
+console.log(revString);
 
-const twodArray = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
-console.log(twodArray[0][1]);
+let str1 = "coding";
+let reverse = str1.split("").reverse().join("");
+console.log(reverse);
