@@ -1,30 +1,22 @@
-let fruits = ["banana", "appel", "orange"];
-console.log(fruits.indexOf("banana"));
+let color = [1, 2, 3, 4, 5, 6, 7];
+console.log(color.includes(3, 2));
 
-//spilce  method
+//shallow copy array
 
-let fruits1 = ["apple", "jackFruit", "watermelon", "mango"];
-fruits1.splice(1, 1, "stawberry");
-console.log(fruits1);
-
-let num = [1, 2, 3, 4, 5];
-num.splice(1, 2, 6, 7, 8);
-console.log(num);
-
-//copy an array
-let orginal = [1, 2, 3, 4, 5];
-let copy = [...orginal];
-copy.splice(2, 1, 7);
-console.log(orginal);
+let num = [1, 2, 3];
+let copy = [].concat(num);
 console.log(copy);
+console.log(copy === num);
 
-let color = ["blue", "green", "red", "black"];
-let indexColor = color.indexOf("green");
-if (indexColor !== -1) {
-  color.splice(indexColor, 1);
-  console.log(color);
-}
+//slice method (with out argument)
+let num1 = [1, 2, 3];
+let copy1 = num1.slice();
+console.log(copy1);
 
-let numbers = [1, 2, 3, 4, 5];
-numbers.splice(0);
-console.log(numbers);
+//spread opeartor
+
+let copy2 = [...num];
+console.log(copy2);
+
+const arr = ["o", "l", "l", "e", "h"];
+console.log(arr.join(""));
