@@ -1,28 +1,24 @@
-//object
+//remove obj
 
-let person = {
-  name: "edwin",
-  age: 21,
-  gender: "male",
-};
-console.log(person.name); //dot notation
+const person = { name: "edwin", age: 18, city: "newyork" };
 
-console.log(person["name"]); //bracket notation
+// delete person.name;
 
-let proName = "age";
-console.log(person[proName]);
+// console.log(person);
 
-//object destruction
+const { name, ...remaining } = person;
 
-const person1 = {
-  name: "edwin",
-  age: 18,
-};
-const { name: personName, age: personAge } = person1;
-console.log(personName, personAge);
+console.log(remaining);
 
-function createPerson(name, age) {
-  return { name, age };
-}
-const person2 = createPerson("edwin", 12);
-console.log(person2);
+//how to check an  obj has a property
+
+const person1 = { name: "edwin", age: 18 };
+
+console.log(person1.hasOwnProperty("name")); //method 1
+console.log(person1.hasOwnProperty("city"));
+
+console.log("name" in person1); //method 2
+console.log("city" in person1);
+
+console.log(person.name !== undefined); //method 3
+console.log(person1.city !== undefined);
