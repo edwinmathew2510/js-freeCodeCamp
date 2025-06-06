@@ -1,22 +1,28 @@
-let color = [1, 2, 3, 4, 5, 6, 7];
-console.log(color.includes(3, 2));
+//object
 
-//shallow copy array
+let person = {
+  name: "edwin",
+  age: 21,
+  gender: "male",
+};
+console.log(person.name); //dot notation
 
-let num = [1, 2, 3];
-let copy = [].concat(num);
-console.log(copy);
-console.log(copy === num);
+console.log(person["name"]); //bracket notation
 
-//slice method (with out argument)
-let num1 = [1, 2, 3];
-let copy1 = num1.slice();
-console.log(copy1);
+let proName = "age";
+console.log(person[proName]);
 
-//spread opeartor
+//object destruction
 
-let copy2 = [...num];
-console.log(copy2);
+const person1 = {
+  name: "edwin",
+  age: 18,
+};
+const { name: personName, age: personAge } = person1;
+console.log(personName, personAge);
 
-const arr = ["o", "l", "l", "e", "h"];
-console.log(arr.join(""));
+function createPerson(name, age) {
+  return { name, age };
+}
+const person2 = createPerson("edwin", 12);
+console.log(person2);
