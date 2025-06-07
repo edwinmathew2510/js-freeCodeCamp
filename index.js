@@ -1,18 +1,28 @@
+//optional chaning (?)
+
 const person = {
   name: "bob",
-  age: 12,
-  sayHello: function () {
-    return "hello " + this.name;
+  profile: {
+    email: "12345678@gmail",
+    phone: {
+      laneNo: 1234567890,
+      mobileNo: 987654321,
+    },
   },
 };
-console.log(person.sayHello());
+console.log(person?.profile?.phone?.mobileNo);
+console.log(person?.profile?.address);
 
-//object () constructor
+let car = {
+  brand: "Toyota",
+  model: "Corolla",
+};
 
-const num = 42;
-const numobj = Object(num);
-console.log(numobj);
-console.log(typeof numobj);
+console.log(car?.color);
 
-let objnum = Object(42);
-console.log(typeof objnum);
+let person2 = {
+  name: "John",
+  age: 30,
+};
+
+console.log(person2?.name);
