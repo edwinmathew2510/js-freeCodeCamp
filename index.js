@@ -1,48 +1,14 @@
-//nested object and accesing
-const person = {
-  name: "edwin",
-  age: 18,
-  contact: {
-    email: "edwintm@gmail.com",
-    phone: {
-      laneno: 1234567890,
-      mobno: 987654321,
-    },
-  },
-};
+//primitive data types
 
-console.log(person.contact.email);
-console.log(person["contact"]["phone"]["mobno"]); //accesing nested object
+let num1 = 5;
+let num2 = num1;
+num1 = 10;
+console.log(num2); // in prm data types chances applied to num1 will not be reflected in num2
 
-const person1 = {
-  name: "edwin",
-  age: 18,
-  address: [
-    { country: "india", state: "kerala", city: "ekm" },
-    { country: "america", state: "new jersy", city: "newyork" },
-  ],
-};
-console.log(person1.address[0].city);
-console.log(person1.address[1].state); // acccesing array-object values
+//non- primitive data types
 
-//exersie
-let person3 = {
-  contact: {
-    phone: {
-      home: "123-456-7890",
-      work: "098-765-4321",
-    },
-  },
-};
-console.log(person3.contact.phone.work); //accesing work
-console.log(person3["contact"]["phone"]["work"]);
+const person = { name: "edwin", age: 21 };
+const person2 = person;
+person.age = 30;
+console.log(person2.age); //even person 2 is reference of person changes has reflected in both
 
-let data = {
-  results: [
-    { name: "Alice", score: 95 },
-    { name: "Bob", score: 80 },
-    { name: "Charlie", score: 90 },
-  ],
-};
-
-console.log(data.results[1].name);
