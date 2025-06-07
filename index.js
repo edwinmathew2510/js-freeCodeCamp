@@ -1,14 +1,18 @@
-//primitive data types
+const person = {
+  name: "bob",
+  age: 12,
+  sayHello: function () {
+    return "hello " + this.name;
+  },
+};
+console.log(person.sayHello());
 
-let num1 = 5;
-let num2 = num1;
-num1 = 10;
-console.log(num2); // in prm data types chances applied to num1 will not be reflected in num2
+//object () constructor
 
-//non- primitive data types
+const num = 42;
+const numobj = Object(num);
+console.log(numobj);
+console.log(typeof numobj);
 
-const person = { name: "edwin", age: 21 };
-const person2 = person;
-person.age = 30;
-console.log(person2.age); //even person 2 is reference of person changes has reflected in both
-
+let objnum = Object(42);
+console.log(typeof objnum);
