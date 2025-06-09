@@ -1,28 +1,22 @@
-//optional chaning (?)
-
 const person = {
-  name: "bob",
-  profile: {
-    email: "12345678@gmail",
-    phone: {
-      laneNo: 1234567890,
-      mobileNo: 987654321,
-    },
-  },
+  name: "edwin",
+  age: 21,
+  company: "Googel",
 };
-console.log(person?.profile?.phone?.mobileNo);
-console.log(person?.profile?.address);
+console.log(person.age);
 
-let car = {
-  brand: "Toyota",
-  model: "Corolla",
-};
+const strJson = `{
+"name":"bob",
+"age":12
+}`;
 
-console.log(car?.color);
+console.log(strJson);
 
-let person2 = {
-  name: "John",
-  age: 30,
-};
+const parsedJson = JSON.parse(strJson);
+console.log(parsedJson);
+console.log(typeof parsedJson);
 
-console.log(person2?.name);
+const stringyJson = JSON.stringify(person);
+console.log(stringyJson);
+const strToParse = JSON.parse(stringyJson);
+console.log(strToParse);
