@@ -1,22 +1,25 @@
-const person = {
-  name: "edwin",
-  age: 21,
-  company: "Googel",
-};
-console.log(person.age);
+const numbers = [0, 1, 2, 3, 4, 5];
+for (let num in numbers) {
+  console.log(num);
+}
 
-const strJson = `{
-"name":"bob",
-"age":12
-}`;
+const str = "freecodecamp";
+for (let char in str) {
+  console.log(char);
+}
 
-console.log(strJson);
+//for off loop
+const people = [
+  { name: "edwin", age: 21 },
+  { name: "kevin", age: 13 },
+  { name: "swapna", age: 40 },
+];
+for (const person of people) {
+  console.log(`${person.name} has ${person.age} years old`);
+}
 
-const parsedJson = JSON.parse(strJson);
-console.log(parsedJson);
-console.log(typeof parsedJson);
+const colors = ["red", "green", "blue"];
 
-const stringyJson = JSON.stringify(person);
-console.log(stringyJson);
-const strToParse = JSON.parse(stringyJson);
-console.log(strToParse);
+for (const color of colors) {
+  console.log(color);
+}
