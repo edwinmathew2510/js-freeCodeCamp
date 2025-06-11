@@ -1,36 +1,16 @@
-//for in loop
+//while loop
 
-const fruits = {
-  name: "apple",
-  color: "red",
-  price: 25,
-};
+// while(condition){}
 
-for (prop in fruits) {
-  console.log(fruits[prop]);
+let userInput = prompt("enter a number between 1 to 10");
+while (isNaN(userInput) || Number(userInput) < 1 || Number(userInput) > 10) {
+  userInput = prompt("the Number you have entered is not valid");
 }
-/////////////////////////////////////////////////////
+alert("You have entered valid number");
 
-function isObject(value) {
-  return typeof value === "object" && !Array.isArray(value) && value !== null;
-}
-
-const person = {
-  name: "edwin",
-  age: 21,
-  address: {
-    street: "cherai",
-    city: "ekm",
-  },
-  hobbies: ["football", "gaming"],
-};
-
-for (const prop in person) {
-  if (isObject(person[prop])) {
-    for (const nested in person[prop]) {
-      console.log(person[prop][nested]);
-    }
-  } else {
-    console.log(person[prop]);
-  }
-}
+//do while loop
+let userInput1;
+do {
+  userInput1 = prompt("plx enter a number btw 1 to 10");
+} while (Number(userInput1) >= 1 || Number(userInput1) <= 10);
+alert("valid");
