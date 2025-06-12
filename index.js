@@ -1,16 +1,28 @@
-//while loop
+// // ///break statement
 
-// while(condition){}
-
-let userInput = prompt("enter a number between 1 to 10");
-while (isNaN(userInput) || Number(userInput) < 1 || Number(userInput) > 10) {
-  userInput = prompt("the Number you have entered is not valid");
+for (let i = 1; i < 10; i++) {
+  if (i == 5) {
+    break;
+  }
+  console.log(i);
 }
-alert("You have entered valid number");
 
-//do while loop
-let userInput1;
-do {
-  userInput1 = prompt("plx enter a number btw 1 to 10");
-} while (Number(userInput1) >= 1 || Number(userInput1) <= 10);
-alert("valid");
+// //continue statement
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue;
+  }
+  console.log(i);
+}
+
+//label
+
+outerloop: for (let i = 0; i < 3; i++) {
+  innerloop: for (let j = 0; j < 3; j++) {
+    if (i == 1 && j == 1) {
+      break outerloop;
+    }
+    console.log(`i:${i} , j:${j}`);
+  }
+}
