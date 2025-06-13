@@ -1,53 +1,44 @@
-//VowelCount
-function getVowelCount(sentence) {
-  let vowels = ["a", "e", "i", "o", "u"];
-  let lowerCaseSentence = sentence.toLowerCase();
-  let count = 0;
-  for (char of lowerCaseSentence) {
-    if (vowels.includes(char)) {
-      count++;
+//factorial
+let num = 10;
+function factorialCalculator(num) {
+  let result = 1;
+  for (let i = result; i <= num; i++) {
+    result = result * i;
+  }
+  const resultMsg = `Factorial of ${num} is ${result}`;
+  return resultMsg;
+}
+
+console.log(factorialCalculator(num));
+
+//Implement the Mutations Algorithm
+
+function mutation(arr) {
+  let first = arr[0].toLowerCase();
+  let second = arr[1].toLowerCase();
+
+  for (let char of second) {
+    if (!first.includes(char)) {
+      return false;
     }
   }
-  return count;
+  return true;
 }
-console.log(getVowelCount("Apples are tasty fruits"));
+console.log(mutation(["hello", "hey"]));
 
-//ConsonantCount
-function getConsonantCount(sentence) {
-  let vowels = ["a", "e", "i", "o", "u"];
-  let count = 0;
-  for (const char of sentence.toLowerCase()) {
-    if (char >= "a" && char <= "z" && !vowels.includes(char)) {
-      count++;
-    }
-  }
-  return count;
+console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+
+//exersises
+for (let i = 1; i < 6; i++) {
+  if (i === 4) break;
+  console.log(i);
 }
-console.log(getConsonantCount("Hello,World!"));
-
-//PunctuationCount
-
-function getPunctuationCount(sentence) {
-  let clearSentence = sentence.replaceAll(" ", "");
-  count = 0;
-  for (let char of clearSentence.toLowerCase()) {
-    if (!(char >= "a" && char <= "z")) {
-      count++;
-    }
-  }
-  return count;
+const shoppingList = { tomatoes: 4, apples: 10 };
+for (const item in shoppingList) {
+  console.log(item);
 }
 
-const punctuationCount = getPunctuationCount("WHAT?!?!?!?!?");
-console.log(`Punctuation Count: ${punctuationCount}`);
-
-//WordCount
-function getWordCount(sentence) {
-  let words = sentence
-    .trim()
-    .split(" ")
-    .filter((word) => word !== "");
-  return words.length;
+const fruits = ["Mango", "Pineapple", "Oranges"];
+for (const fruit of fruits) {
+  console.log(fruit);
 }
-const wordCount = getWordCount("I love freeCodeCamp");
-console.log(`Word Count: ${wordCount}`);
