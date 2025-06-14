@@ -1,23 +1,67 @@
-//string constructor function
+//Closures
 
-const stringObject = new String("hello ,world!");
-console.log(stringObject);
+function outer() {
+  let message = "hello";
 
-//toString methods()
+  function inner() {
+    console.log(message); //clousers
+  }
+  inner();
+}
+outer();
 
-const num = 10;
-console.log(num.toString());
+message = "boom"; //private variable
 
-console.log(num.toString(2)); // binary of 10
+///////////////////////////////
+//count down
+function counter() {
+  let count = 0;
+  function increment() {
+    count++;
+    console.log("value increment :" + count);
+  }
+  return { increment };
+}
 
-const arr = [1, 2, 3]; //array
+let coun = counter();
+coun.increment();
+coun.increment();
+coun.increment();
 
-console.log(arr.toString());
+///////////////////////
+// point game
 
-// Number constactor
+function createGame() {
+  let score = 0;
 
-const myNum = new Number("32");
-console.log(myNum);
+  function increaseScore(points) {
+    score += points;
+    console.log("scores is : " + points + " pts");
+  }
+  function decreaseScore(points) {
+    score -= points;
+    console.log("scores is : " + points + " pts");
+  }
+  function getScore() {
+    return score;
+  }
+  return { increaseScore, decreaseScore, getScore };
+}
 
-const mynum = Number("32");
-console.log(mynum);
+let game = createGame();
+game.increaseScore(5);
+game.increaseScore(5);
+game.decreaseScore(5);
+console.log("total score is : " + game.getScore());
+
+//////////////////////
+//multyply
+
+function createGreeter(greeting) {
+  return function (name) {
+    console.log(greeting + ", " + name);
+  };
+}
+
+let sayHello = createGreeter("Hello");
+sayHello("Alice");
