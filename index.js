@@ -1,55 +1,53 @@
-///// js exersise
-function countVowels(str) {
+//student msg exersise
+function getAverage(array) {
   let count = 0;
-  let vowels = ["a", "e", "i", "o", "u"];
-  let strLowercase = str.toLowerCase();
-  for (let char of strLowercase) {
-    if (vowels.includes(char)) {
-      count++;
-    }
+  for (let i = 0; i < array.length; i++) {
+    count = count + array[i];
   }
-  return count;
+  let avgMark = count / array.length;
+  return avgMark;
 }
+// console.log(getAverage([10, 20, 30]));
 
-console.log(countVowels("Hello World"));
-/////////////////////////////
+function getGrade(score) {
+  let grade = "";
+  if (score == 100) {
+    grade = "A+";
+  } else if (score >= 90 && score <= 99) {
+    grade = "A";
+  } else if (score >= 80 && score <= 89) {
+    grade = "B";
+  } else if (score >= 70 && score <= 79) {
+    grade = "C";
+  } else if (score >= 60 && score <= 69) {
+    grade = "D";
+  } else if (score >= 0 && score <= 59) {
+    grade = "F";
+  }
+  return grade;
+}
+// console.log(getGrade(95));
 
-function checkEvenOrOdd(num) {
-  if (num % 2 === 0) {
-    return "even";
+function hasPassingGrade(score) {
+  let value;
+  let grade = getGrade(score);
+  if (grade == "F") {
+    value = false;
   } else {
-    return "odd";
+    value = true;
   }
+  return value;
 }
-console.log(checkEvenOrOdd(7));
-console.log(checkEvenOrOdd(10));
-///////////////////////
 
-function findMax(array) {
-  maxNum = Math.max(...array);
-  return maxNum;
-}
-console.log(findMax([3, 7, 2, 9, 5]));
+function studentMsg(array, score) {
+  let average = getAverage(array);
+  let grade = getGrade(score);
+  let isResult = hasPassingGrade(score);
 
-///////
-
-function reverseString(str) {
-  let newStr = str.split("").reverse().join("");
-  return newStr;
+  if (isResult == true) {
+    return `Class average: ${average}. Your grade: ${grade}. You passed the course.`;
+  } else {
+    return `Class average: ${average}. Your grade: ${grade}. You failed the course.`;
+  }
 }
-console.log(reverseString("hello"));
-//////////
-function getRandomNumber() {
-  let randomNumber = Math.floor(Math.random() * 6) + 1;
-  if (randomNumber % 3 == 0) {
-    result = "Fizz";
-  }
-  if (randomNumber % 5 == 0) {
-    result = "buzz";
-  }
-  if (randomNumber % 3 == 0 && randomNumber % 5 == 0) {
-    result = "Fizz Buzz";
-  }
-  return result;
-}
-console.log(getRandomNumber());
+console.log(studentMsg([56, 23, 89, 42, 75, 11, 68, 34, 91, 19], 100));
