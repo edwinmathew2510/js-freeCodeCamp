@@ -1,14 +1,19 @@
-function generatePassword(len) {
-  let length = len;
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-  let password = "";
-
-  for (let i = 0; i < length; i++) {
-    let randomIndex = Math.floor(Math.random() * characters.length);
-    password += characters[randomIndex];
+// sum all numbers algorithm.
+function sumAll(arrNum) {
+  let first = arrNum[0];
+  let second = arrNum[1];
+  let arrSum = 0;
+  if (first <= second) {
+    for (let i = first; i <= second; i++) {
+      arrSum = arrSum + i;
+    }
+    return arrSum;
+  } else {
+    for (let i = second; i <= first; i++) {
+      arrSum = arrSum + i;
+    }
+    return arrSum;
   }
-  return password;
 }
-password = generatePassword(8);
-console.log("Generated password:" + password);
+console.log(sumAll([5, 10]));
+console.log(sumAll([10, 5]));
