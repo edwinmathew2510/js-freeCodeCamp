@@ -1,10 +1,14 @@
-// math js
+function generatePassword(len) {
+  let length = len;
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  let password = "";
 
-export function add(a, b) {
-  return a + b;
+  for (let i = 0; i < length; i++) {
+    let randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters[randomIndex];
+  }
+  return password;
 }
-export function sub(a, b) {
-  return a - b;
-}
-let pi = 3.13;
-export { pi };
+password = generatePassword(8);
+console.log("Generated password:" + password);
