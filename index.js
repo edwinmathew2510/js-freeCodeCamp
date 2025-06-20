@@ -1,51 +1,81 @@
-const number = [1, 2, 3, 4, 5];
-
-//map method
-let double = number.map((num) => num * 2);
-console.log(number);
-console.log(double);
-
-// filter method
-let filtered = number.filter((num) => num % 2 == 0);
-console.log(filtered);
-console.log(number); //desont affect og array
-
-//reduce methods
-
-let reduce = number.reduce(
-  (acummlator, currentValue) => acummlator + currentValue
-);
-console.log(reduce);
-// method chaning
-
-let transcations = [
-  { amount: 100, type: "credit" },
-  { amount: 34, type: "cash" },
-  { amount: 80, type: "credit" },
-  { amount: 60, type: "cash" },
-  { amount: 320, type: "credit" },
+const library = [
+  {
+    title: "Your Next Five Moves: Master the Art of Business Strategy",
+    author: "Patrick Bet-David and Greg Dinkin",
+    about: "A book on how to plan ahead",
+    pages: 320,
+  },
+  {
+    title: "Atomic Habits",
+    author: "James Clear",
+    about:
+      "A practical book about discarding bad habits and building good ones",
+    pages: 320,
+  },
+  {
+    title:
+      "Choose Your Enemies Wisely: Business Planning for the Audacious Few",
+    author: "Patrick Bet-David",
+    about:
+      "A book that emphasizes the importance of identifying and understanding one's adversaries to succeed in the business world",
+    pages: 304,
+  },
+  {
+    title: "The Embedded Entrepreneur",
+    author: "Arvid Kahl",
+    about: "A book focusing on how to build an audience-driven business",
+    pages: 308,
+  },
+  {
+    title:
+      "How to Be a Coffee Bean: 111 Life-Changing Ways to Create Positive Change",
+    author: "Jon Gordon",
+    about: "A book about effective ways to lead a coffee bean lifestyle",
+    pages: 256,
+  },
+  {
+    title:
+      "The Creative Mindset: Mastering the Six Skills That Empower Innovation",
+    author: "Jeff DeGraff and Staney DeGraff",
+    about: "A book on how to develop creativity and  innovation skills",
+    pages: 168,
+  },
+  {
+    title: "Rich Dad Poor Dad",
+    author: "Robert Kiyosaki and Sharon Lechter",
+    about:
+      "A book about financial literacy, financial independence, and building wealth. ",
+    pages: 336,
+  },
+  {
+    title: "Zero to Sold",
+    author: "Arvid Kahl",
+    about: "A book on how to bootstrap a business",
+    pages: 500,
+  },
 ];
 
-let oprations = transcations
-  .filter((transcation) => transcation.type == "credit")
-  .map((transcation) => transcation.amount * 1.1)
-  .reduce((sum, amount) => sum + amount, 0);
+function displayBooks(books) {
+  let result = "";
+  books.forEach((book) => {
+    result += `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}\n\n`;
+  });
+  return result;
+}
 
-console.log(oprations);
+console.log(displayBooks(library));
 
-//// sorted methods
+function getBookSummaries(books) {
+  return books.map((book) => book.about);
+}
 
-let toSorted = [45, 576, 34532, 87568, 567, 234, 87];
+console.log(getBookSummaries(library));
 
-toSorted.sort((a, b) => a - b);
-console.log(toSorted);
+function getBooksByAuthor(books, authorName) {
+  return books.filter((book) => {
+    const authors = book.author.split(" and ").map((a) => a.trim());
+    return authors.includes(authorName);
+  });
+}
 
-//every method
-
-let every = number.every((num) => num % 2 == 0);
-console.log(every);
-
-//some method
-
-let some = number.some((num) => num % 2 == 0);
-console.log(some);
+console.log(getBooksByAuthor(library, "James Clear"));
