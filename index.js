@@ -1,81 +1,19 @@
-const library = [
-  {
-    title: "Your Next Five Moves: Master the Art of Business Strategy",
-    author: "Patrick Bet-David and Greg Dinkin",
-    about: "A book on how to plan ahead",
-    pages: 320,
-  },
-  {
-    title: "Atomic Habits",
-    author: "James Clear",
-    about:
-      "A practical book about discarding bad habits and building good ones",
-    pages: 320,
-  },
-  {
-    title:
-      "Choose Your Enemies Wisely: Business Planning for the Audacious Few",
-    author: "Patrick Bet-David",
-    about:
-      "A book that emphasizes the importance of identifying and understanding one's adversaries to succeed in the business world",
-    pages: 304,
-  },
-  {
-    title: "The Embedded Entrepreneur",
-    author: "Arvid Kahl",
-    about: "A book focusing on how to build an audience-driven business",
-    pages: 308,
-  },
-  {
-    title:
-      "How to Be a Coffee Bean: 111 Life-Changing Ways to Create Positive Change",
-    author: "Jon Gordon",
-    about: "A book about effective ways to lead a coffee bean lifestyle",
-    pages: 256,
-  },
-  {
-    title:
-      "The Creative Mindset: Mastering the Six Skills That Empower Innovation",
-    author: "Jeff DeGraff and Staney DeGraff",
-    about: "A book on how to develop creativity and  innovation skills",
-    pages: 168,
-  },
-  {
-    title: "Rich Dad Poor Dad",
-    author: "Robert Kiyosaki and Sharon Lechter",
-    about:
-      "A book about financial literacy, financial independence, and building wealth. ",
-    pages: 336,
-  },
-  {
-    title: "Zero to Sold",
-    author: "Arvid Kahl",
-    about: "A book on how to bootstrap a business",
-    pages: 500,
-  },
-];
+//dom
 
-function displayBooks(books) {
-  let result = "";
-  books.forEach((book) => {
-    result += `Title: ${book.title}\nAuthor: ${book.author}\nPages: ${book.pages}\n\n`;
-  });
-  return result;
-}
+//querySelectorAll
+let family = document.querySelectorAll("ul.family li");
+console.log(family);
 
-console.log(displayBooks(library));
+//inner html
+document.getElementById("container1").innerHTML =
+  "<p>Hi, this is a new node!</p>";
 
-function getBookSummaries(books) {
-  return books.map((book) => book.about);
-}
+//createElement()
+// let newElement = document.createElement("h1");
+// newElement.textContent = "hi newElement method";
+// let containers2 = document.getElementById("container2");
+// containers2.appendChild(newElement);
 
-console.log(getBookSummaries(library));
-
-function getBooksByAuthor(books, authorName) {
-  return books.filter((book) => {
-    const authors = book.author.split(" and ").map((a) => a.trim());
-    return authors.includes(authorName);
-  });
-}
-
-console.log(getBooksByAuthor(library, "James Clear"));
+let newElement = document.createElement("h1");
+newElement.textContent = "hi this new createElement()";
+document.getElementById("container1").appendChild(newElement); //done by edw
