@@ -1,19 +1,17 @@
-//dom
+// dom 2
 
-//querySelectorAll
-let family = document.querySelectorAll("ul.family li");
-console.log(family);
+//innerText
+let content = document.getElementById("container1");
+console.log(content.innerText);
+//accessed the text element
+// content.innerText = "hi its innerText";
+// console.log(content.innerText);
 
-//inner html
-document.getElementById("container1").innerHTML =
-  "<p>Hi, this is a new node!</p>";
+//textContent
 
-//createElement()
-// let newElement = document.createElement("h1");
-// newElement.textContent = "hi newElement method";
-// let containers2 = document.getElementById("container2");
-// containers2.appendChild(newElement);
+console.log(content.textContent);
+/// it will show all text content ,including all descendants
+// still will visible if it hidden
 
-let newElement = document.createElement("h1");
-newElement.textContent = "hi this new createElement()";
-document.getElementById("container1").appendChild(newElement); //done by edw
+// content.textContent = "hi";
+// console.log(content.textContent);
