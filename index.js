@@ -1,16 +1,25 @@
-// dom 2.1
+// dom3, interfaces;
 
-//appedChild ( )
-let contain = document.getElementById("container1");
-let newElement = document.createElement("h1");
-contain.appendChild(newElement).innerText = "its me";
+//navigator interface
+console.log(navigator.userAgent);
+console.log(navigator.language); //user preferred language
 
-// removeChild
-let section = document.getElementById("testline");
-section.removeChild(section.lastElementChild);
+//window interface
 
-// remove last node on ul
-let list = document.getElementById("list");
-list.removeChild(list.lastElementChild);
-//removes the last m=node in list d
-list.appendChild((list.lastElementChild.innerText = "replaced"));
+console.log(window.innerWidth); //show thr inner width
+console.log(window.location); // local url location
+
+//document interface
+
+console.log(document.children);
+
+///////////////////////////////
+
+//setAr-trributes
+
+const para = document.getElementById("container1");
+para.setAttribute("class", "class-1");
+// class attribute is added
+
+para.setAttribute("class", "example");
+//class attribute is updated
