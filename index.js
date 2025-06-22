@@ -1,17 +1,16 @@
-// dom 2
+// dom 2.1
 
-//innerText
-let content = document.getElementById("container1");
-console.log(content.innerText);
-//accessed the text element
-// content.innerText = "hi its innerText";
-// console.log(content.innerText);
+//appedChild ( )
+let contain = document.getElementById("container1");
+let newElement = document.createElement("h1");
+contain.appendChild(newElement).innerText = "its me";
 
-//textContent
+// removeChild
+let section = document.getElementById("testline");
+section.removeChild(section.lastElementChild);
 
-console.log(content.textContent);
-/// it will show all text content ,including all descendants
-// still will visible if it hidden
-
-// content.textContent = "hi";
-// console.log(content.textContent);
+// remove last node on ul
+let list = document.getElementById("list");
+list.removeChild(list.lastElementChild);
+//removes the last m=node in list d
+list.appendChild((list.lastElementChild.innerText = "replaced"));
