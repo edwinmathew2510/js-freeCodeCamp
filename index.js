@@ -1,14 +1,32 @@
-//dom 6 , style ,class list
-let para = document.getElementById("para");
-para.style.color = "red";
+//dom 7 ,settimeout, set interval
 
-let paraEl = document.getElementById("paraa");
-paraEl.classList.add("highlight");
-// paraEl.classList.remove("highlight");// to remove
+// setTimeout
+let Timeout = setTimeout(() => {
+  console.log("run after 3 sec");
+}, 3000);
 
-let toggleBtn = document.getElementById("tooglebtn");
-let menu = document.getElementById("menu");
+clearTimeout(Timeout); // cancel time out
 
-toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
+// setInterval
+let Interval = setInterval(() => {
+  console.log("runs every 2 sec");
+}, 2000);
 
-//////////////////
+setTimeout(() => {
+  clearInterval(Interval);
+}, 1000); //cancel intervel
+
+////////////////
+// exercise
+
+let cancelButton = document.getElementById("Cancel-Button");
+cancelButton.classList.add("highlight");
+
+let interval = setInterval(() => {
+  console.log("program is running");
+}, 1000);
+
+cancelButton.addEventListener("click", () => {
+  clearInterval(interval);
+  console.log("program cancelled");
+});

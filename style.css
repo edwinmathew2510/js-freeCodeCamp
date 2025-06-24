@@ -1,12 +1,4 @@
 .highlight{
-  background-color: yellow;
-}
-.menu{
-  display: none;
-  width: 50%;
-  background-color: grey;
-  padding: 10px
-}
-.menu.show{
-  display: block;
+  color: white;
+  background: #ff0000;
 }
