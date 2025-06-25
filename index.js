@@ -1,32 +1,29 @@
-//dom 7 ,settimeout, set interval
+//dom 8
 
-// setTimeout
-let Timeout = setTimeout(() => {
-  console.log("run after 3 sec");
-}, 3000);
+// requestAnimationFrame
+let box = document.getElementById("box");
 
-clearTimeout(Timeout); // cancel time out
+let position = 0;
+function animate() {
+  position += 1;
+  box.style.left = position + "px";
 
-// setInterval
-let Interval = setInterval(() => {
-  console.log("runs every 2 sec");
-}, 2000);
+  if (position < 300) {
+    requestAnimationFrame(animate);
+  }
+}
+requestAnimationFrame(animate);
 
-setTimeout(() => {
-  clearInterval(Interval);
-}, 1000); //cancel intervel
+//loop animation
 
-////////////////
-// exercise
+let box1 = document.getElementById("box1");
+function loopBox() {
+  position += 2;
+  if (position > window.innerWidth) {
+    position = 0;
+  }
+  box1.style.left = position + "px";
 
-let cancelButton = document.getElementById("Cancel-Button");
-cancelButton.classList.add("highlight");
-
-let interval = setInterval(() => {
-  console.log("program is running");
-}, 1000);
-
-cancelButton.addEventListener("click", () => {
-  clearInterval(interval);
-  console.log("program cancelled");
-});
+  requestAnimationFrame(loopBox);
+}
+requestAnimationFrame(loopBox);
