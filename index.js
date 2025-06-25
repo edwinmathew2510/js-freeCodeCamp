@@ -1,29 +1,30 @@
-//dom 8
+//dom 9 , WAAPI,animate()
+let square = document.getElementById("square");
 
-// requestAnimationFrame
-let box = document.getElementById("box");
+let playBtn = document.getElementById("play-button");
 
-let position = 0;
-function animate() {
-  position += 1;
-  box.style.left = position + "px";
+let pauseBtn = document.getElementById("pause-button");
 
-  if (position < 300) {
-    requestAnimationFrame(animate);
+let animation = square.animate(
+  [{ transform: "translateX(0px)" }, { transform: "translateX(200px)" }],
+  {
+    duration: 5000,
+    direction: "alternate",
+    easing: "ease-in-out",
+    // iterations: Infinity,
   }
-}
-requestAnimationFrame(animate);
+);
 
-//loop animation
+animation.onfinish = () => {
+  console.log("animation has been stopped");
+};
 
-let box1 = document.getElementById("box1");
-function loopBox() {
-  position += 2;
-  if (position > window.innerWidth) {
-    position = 0;
-  }
-  box1.style.left = position + "px";
+playBtn.addEventListener("click", () => {
+  animation.play();
+  console.log("animation has been started");
+});
 
-  requestAnimationFrame(loopBox);
-}
-requestAnimationFrame(loopBox);
+pauseBtn.addEventListener("click", () => {
+  animation.pause();
+  console.log("animation has been paused");
+});
