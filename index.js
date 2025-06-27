@@ -1,30 +1,25 @@
-//dom 9 , WAAPI,animate()
-let square = document.getElementById("square");
+//dom 10 , canvas, modal ,non-modal
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+console.log(ctx);
 
-let playBtn = document.getElementById("play-button");
+ctx.fillStyle = "darkblue";
+// ctx.fillRect(1, 1, 200, 200);
+ctx.font = "30px Aerial";
+ctx.fillText("hello i am edwin", 1, 50);
 
-let pauseBtn = document.getElementById("pause-button");
+////////////
+// model dialog
+let dialog = document.getElementById("modal");
 
-let animation = square.animate(
-  [{ transform: "translateX(0px)" }, { transform: "translateX(200px)" }],
-  {
-    duration: 5000,
-    direction: "alternate",
-    easing: "ease-in-out",
-    // iterations: Infinity,
-  }
-);
+let showBtn = document.getElementById("start");
 
-animation.onfinish = () => {
-  console.log("animation has been stopped");
-};
+let stopBtn = document.getElementById("stop");
 
-playBtn.addEventListener("click", () => {
-  animation.play();
-  console.log("animation has been started");
+showBtn.addEventListener("click", () => {
+  dialog.show();
 });
 
-pauseBtn.addEventListener("click", () => {
-  animation.pause();
-  console.log("animation has been paused");
+stopBtn.addEventListener("click", () => {
+  dialog.close();
 });

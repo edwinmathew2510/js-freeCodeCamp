@@ -1,11 +1,6 @@
-.square{
-    background-color: black;
-    width: 15rem;
-    height:10rem;
-}
 button{
-     padding: 10px;
-     margin:5px;
-     font-size: 18px;
-     border-radius: 5px;
+    padding: 8px;
+    border: 1px solid black;
+    font-size: 18px;
+    border-radius: 5px;
 }
