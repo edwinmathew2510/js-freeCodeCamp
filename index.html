@@ -5,23 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <dialog id="my-modal">
-   <p>This is a modal dialog.</p>
-   <button id="close-modal">Close Modal</button>
-</dialog>
-<button id="open-modal">Open Modal Dialog</button>
+  <body>
+    <script src="index.js"></script>
   </body>
-  <script>
-    const dialog = document.getElementById('my-modal');
-const openButton = document.getElementById('open-modal');
-const closeButton = document.getElementById('close-modal');
-
-openButton.addEventListener('click', () => {
-  dialog.show();
-});
-
-closeButton.addEventListener('click', () => {
-  dialog.close();
-});
-  </script>
 </html>
