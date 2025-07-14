@@ -3,18 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
-    <h1>Best Front End Trio</h1>
-    <hr />
-    <ul class="item-list">
-      <li>HTML <span class="hearts">&#9825;</span></li>
-      <li>CSS<span class="hearts">&#9825;</span></li>
-      <li>JAVA SCRIPT<span class="hearts">&#9825;</span></li>
-    </ul>
-    <hr />
-    <script src="index.js"></script>
+  <dialog id="my-modal">
+   <p>This is a modal dialog.</p>
+   <button id="close-modal">Close Modal</button>
+</dialog>
+<button id="open-modal">Open Modal Dialog</button>
   </body>
+  <script>
+    const dialog = document.getElementById('my-modal');
+const openButton = document.getElementById('open-modal');
+const closeButton = document.getElementById('close-modal');
+
+openButton.addEventListener('click', () => {
+  dialog.show();
+});
+
+closeButton.addEventListener('click', () => {
+  dialog.close();
+});
+  </script>
 </html>

@@ -1,3 +1,0 @@
-heart.addEventListener("click", () => {
-//   heartColor();
-// });
