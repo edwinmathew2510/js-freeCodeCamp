@@ -1,46 +1,45 @@
-// async/await
+const authorContainer = document.getElementById("author-container");
+const loadMoreBtn = document.getElementById("load-more-btn");
 
-function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+let startingIndex = 0;
+let endingIndex = 8;
+let authorDataArr = [];
 
-async function showSteps() {
-  console.log("Step 1");
-  await wait(1000); // wait 1 second
-  console.log("Step 2");
-  await wait(1000);
-  console.log("Step 3");
-}
-showSteps();
+fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
+  .then((res) => res.json())
+  .then((data) => {
+    authorDataArr = data;
+    displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+  })
+  .catch((err) => {
+    authorContainer.innerHTML =
+      '<p class="error-msg">There was an error loading the authors</p>';
+  });
 
-/////////////////////
+const fetchMoreAuthors = () => {
+  startingIndex += 8;
+  endingIndex += 8;
 
-async function getUserData() {
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users");
-    let userData = await response.json();
-    userData.forEach((user) => {
-      console.log(`${user.name} -${user.email} `);
-    });
-  } catch (error) {
-    console.error("Error on Fetching", error);
+  displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+  if (authorDataArr.length <= endingIndex) {
+    loadMoreBtn.disabled = true;
+    loadMoreBtn.style.cursor = "not-allowed";
+    loadMoreBtn.textContent = "No more data to load";
   }
-}
+};
 
-/////////////////////
+const displayAuthors = (authors) => {
+  authors.forEach(({ author, image, url, bio }, index) => {
+    authorContainer.innerHTML += `
+    <div id="${index}" class="user-card">
+      <h2 class="author-name">${author}</h2>
+      <img class="user-img" src="${image}" alt="${author} avatar">
+      <div class="purple-divider"></div>
+      <p class="bio">${bio.length > 50 ? bio.slice(0, 50) + "..." : bio}</p>
+      <a class="author-link" href="${url}" target="_blank">${author} author page</a>
+    </div>
+  `;
+  });
+};
 
-async function getUserCity() {
-  try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/users");
-    let users = await response.json();
-    let southChristyUsers = users.filter(
-      (user) => user.address.city === "South Christy"
-    );
-    southChristyUsers.forEach((user) => {
-      const { street, suite, city, zipcode } = user.address;
-      console.log(`${user.name} - ${street}, ${suite}, ${city} - ${zipcode}`);
-    });
-  } catch (error) {
-    console.error("Error while fetching", error);
-  }
-}
+loadMoreBtn.addEventListener("click", fetchMoreAuthors);
