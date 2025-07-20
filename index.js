@@ -1,25 +1,46 @@
-//promises
-const aPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("operation successful");
-  }, 1000);
-});
+// async/await
 
-aPromise
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-//promise chaining
-fetch("https://api.example.com/data")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    return fetch("https://api.example.com/data2");
-  })
-  .then((response) => response.json())
-  .then((data2) => console.log(data2))
-  .catch((error) => console.error("Error:", error));
+async function showSteps() {
+  console.log("Step 1");
+  await wait(1000); // wait 1 second
+  console.log("Step 2");
+  await wait(1000);
+  console.log("Step 3");
+}
+showSteps();
+
+/////////////////////
+
+async function getUserData() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
+    let userData = await response.json();
+    userData.forEach((user) => {
+      console.log(`${user.name} -${user.email} `);
+    });
+  } catch (error) {
+    console.error("Error on Fetching", error);
+  }
+}
+
+/////////////////////
+
+async function getUserCity() {
+  try {
+    let response = await fetch("https://jsonplaceholder.typicode.com/users");
+    let users = await response.json();
+    let southChristyUsers = users.filter(
+      (user) => user.address.city === "South Christy"
+    );
+    southChristyUsers.forEach((user) => {
+      const { street, suite, city, zipcode } = user.address;
+      console.log(`${user.name} - ${street}, ${suite}, ${city} - ${zipcode}`);
+    });
+  } catch (error) {
+    console.error("Error while fetching", error);
+  }
+}
