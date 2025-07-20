@@ -1,39 +1,25 @@
-// asynchronous
+//promises
+const aPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("operation successful");
+  }, 1000);
+});
 
-// fetch();
-// to make network request to send or receive data from server/
-//  GET, POST, PUT and DELETE HTTP
+aPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
-// GET
+//promise chaining
 fetch("https://api.example.com/data")
   .then((response) => response.json())
-  .then((data) => console.log(data));
-
-// POST
-fetch("https://api.example.com/users", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: "John Doe",
-    email: "john@example.com",
-  }),
-});
-
-// PUT
-fetch("https://api.example.com/users/40", {
-  method: "PUT",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: "John Doe",
-    email: "john@example.com",
-  }),
-});
-
-// DELETE
-fetch("https://api.example.com/users/40", {
-  method: "DELETE",
-});
+  .then((data) => {
+    console.log(data);
+    return fetch("https://api.example.com/data2");
+  })
+  .then((response) => response.json())
+  .then((data2) => console.log(data2))
+  .catch((error) => console.error("Error:", error));
