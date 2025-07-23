@@ -1,30 +1,34 @@
-// crud operations
+//local storage
 
-let items = [];
+localStorage.setItem("name", "edwin");
 
-function createItem(item) {
-  //create items
-  items.push(item);
-}
+localStorage.getItem("name");
+console.log(myName);
 
-//read items
-function readItem() {
-  return items;
-}
-//updateItems
-function updateItems(index, item) {
-  items[index] = item;
-}
-//deleteItems
-function deleteItems(index) {
-  items.splice(index, 1);
-}
+localStorage.removeItem("name");
 
-createItem("book1");
-createItem("book2");
+localStorage.clear();
 
-updateItems(1, "update");
-console.log(readItem());
+///////////////////////////
 
-deleteItems(1);
-console.log(readItem());
+let user = {
+  name: "edwin",
+  age: 23,
+  theme: "dark",
+};
+
+localStorage.setItem("userData", JSON.stringify(user));
+
+let savedUser = JSON.parse(localStorage.getItem("userData"));
+
+console.log(savedUser.age);
+
+//exercise
+
+let favMovies = {
+  movie1: "Titanic",
+  movie2: "Sky high",
+  movie3: "Terminator",
+};
+localStorage.setItem("favMoviesList", JSON.stringify(favMovies));
+favMovies.movie1 = "Kgf";
