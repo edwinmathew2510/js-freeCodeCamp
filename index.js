@@ -1,45 +1,30 @@
-const authorContainer = document.getElementById("author-container");
-const loadMoreBtn = document.getElementById("load-more-btn");
+// crud operations
 
-let startingIndex = 0;
-let endingIndex = 8;
-let authorDataArr = [];
+let items = [];
 
-fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
-  .then((res) => res.json())
-  .then((data) => {
-    authorDataArr = data;
-    displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
-  })
-  .catch((err) => {
-    authorContainer.innerHTML =
-      '<p class="error-msg">There was an error loading the authors</p>';
-  });
+function createItem(item) {
+  //create items
+  items.push(item);
+}
 
-const fetchMoreAuthors = () => {
-  startingIndex += 8;
-  endingIndex += 8;
+//read items
+function readItem() {
+  return items;
+}
+//updateItems
+function updateItems(index, item) {
+  items[index] = item;
+}
+//deleteItems
+function deleteItems(index) {
+  items.splice(index, 1);
+}
 
-  displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
-  if (authorDataArr.length <= endingIndex) {
-    loadMoreBtn.disabled = true;
-    loadMoreBtn.style.cursor = "not-allowed";
-    loadMoreBtn.textContent = "No more data to load";
-  }
-};
+createItem("book1");
+createItem("book2");
 
-const displayAuthors = (authors) => {
-  authors.forEach(({ author, image, url, bio }, index) => {
-    authorContainer.innerHTML += `
-    <div id="${index}" class="user-card">
-      <h2 class="author-name">${author}</h2>
-      <img class="user-img" src="${image}" alt="${author} avatar">
-      <div class="purple-divider"></div>
-      <p class="bio">${bio.length > 50 ? bio.slice(0, 50) + "..." : bio}</p>
-      <a class="author-link" href="${url}" target="_blank">${author} author page</a>
-    </div>
-  `;
-  });
-};
+updateItems(1, "update");
+console.log(readItem());
 
-loadMoreBtn.addEventListener("click", fetchMoreAuthors);
+deleteItems(1);
+console.log(readItem());
